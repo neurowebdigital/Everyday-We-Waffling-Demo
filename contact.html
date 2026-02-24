@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us | Everyday We Waffling</title>
+
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/contact.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<div id="header"></div>
+
+<!-- HERO -->
+<section class="contact-hero reveal">
+  <div class="container">
+    <h1>Let’s Connect</h1>
+    <p>
+      Planning a birthday? Corporate event? Or just craving waffles?
+      We’d love to hear from you.
+    </p>
+  </div>
+</section>
+
+<!-- CONTACT SECTION -->
+<section class="contact-main reveal">
+  <div class="container contact-grid">
+
+    <!-- LEFT SIDE INFO -->
+    <div class="contact-info">
+
+      <h2>Visit Us</h2>
+
+      <div class="info-block">
+        <h3>Location</h3>
+        <p>Cape Town, South Africa</p>
+      </div>
+
+      <div class="info-block">
+        <h3>Phone</h3>
+        <p>071 794 6682</p>
+      </div>
+
+      <div class="info-block">
+        <h3>Email</h3>
+        <p>info@everydaywewaffling.co.za</p>
+      </div>
+
+      <div class="info-block">
+        <h3>Trading Hours</h3>
+        <p>
+          Mon – Fri: 10:00 – 20:00<br>
+          Sat – Sun: 10:00 – 22:00
+        </p>
+      </div>
+
+      <a href="https://wa.me/27717946682" class="btn-primary whatsapp-btn">
+        Message Us On WhatsApp
+      </a>
+
+    </div>
+
+    <!-- RIGHT SIDE FORM -->
+    <div class="contact-form">
+
+      <h2>Send Us A Message</h2>
+
+      <form>
+
+        <div class="form-group">
+          <input type="text" placeholder="Full Name" required>
+        </div>
+
+        <div class="form-group">
+          <input type="email" placeholder="Email Address" required>
+        </div>
+
+        <div class="form-group">
+          <input type="text" placeholder="Phone Number">
+        </div>
+
+        <div class="form-group">
+          <textarea rows="5" placeholder="Tell us about your event or enquiry..." required></textarea>
+        </div>
+
+        <button type="submit" class="btn-primary">
+          Send Message
+        </button>
+
+      </form>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- MAP SECTION -->
+<section class="contact-map reveal">
+  <div class="container">
+    <h2>Find Us</h2>
+
+    <div class="map-wrapper">
+      <!-- Replace with actual Google Maps embed -->
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3308.918920317373!2d18.424055!3d-33.924868"
+        width="100%" 
+        height="400" 
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy">
+      </iframe>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="contact-cta reveal">
+  <div class="container">
+    <h2>Ready To Experience It?</h2>
+    <p>Visit us today or explore our menu online.</p>
+    <a href="menu.html" class="btn-primary">View Menu</a>
+  </div>
+</section>
+
+<div id="footer"></div>
+
+<script src="components/component.js"></script>
+
+<script>
+const reveals = document.querySelectorAll(".reveal");
+
+const observer = new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add("active");
+    }
+  });
+},{ threshold:0.15 });
+
+reveals.forEach(reveal=>{
+  observer.observe(reveal);
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us | Everyday We Waffling</title>
+
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/about.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<div id="header"></div>
+
+<!-- HERO -->
+<section class="about-hero reveal">
+  <div class="container">
+    <h1>More Than Just Dessert</h1>
+    <p>
+      Everyday We Waffling was built on one simple idea —
+      bring people together over something sweet.
+    </p>
+  </div>
+</section>
+
+<!-- STORY SECTION -->
+<section class="about-story reveal">
+  <div class="container story-grid">
+
+    <div class="story-text">
+      <h2>Our Story</h2>
+      <p>
+        What started as a passion for perfectly golden waffles quickly turned
+        into one of Cape Town’s happiest dessert spots. From handcrafted
+        Belgian waffles to over-the-top milkshakes, every item on our menu
+        is made fresh and designed to create moments worth remembering.
+      </p>
+
+      <p>
+        We believe dessert isn’t just food — it’s an experience.
+        It’s birthday celebrations, date nights, family laughs,
+        and late-night cravings all in one.
+      </p>
+    </div>
+
+    <div class="story-image">
+      <img src="assets/images/about/shop-interior.jpg" alt="Inside the dessert shop">
+    </div>
+
+  </div>
+</section>
+
+<!-- VALUES -->
+<section class="about-values reveal">
+  <div class="container">
+
+    <h2>What Makes Us Different</h2>
+
+    <div class="values-grid">
+
+      <div class="value-card">
+        <h3>Premium Ingredients</h3>
+        <p>We use quality ingredients to ensure every bite is worth it.</p>
+      </div>
+
+      <div class="value-card">
+        <h3>Made Fresh Daily</h3>
+        <p>Our waffles and treats are prepared fresh for maximum flavour.</p>
+      </div>
+
+      <div class="value-card">
+        <h3>Experience Focused</h3>
+        <p>From presentation to service, everything is designed to impress.</p>
+      </div>
+
+      <div class="value-card">
+        <h3>Community Driven</h3>
+        <p>A welcoming space for families, friends and celebrations.</p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- TEAM / OWNER SECTION -->
+<section class="about-team reveal">
+  <div class="container team-grid">
+
+    <div class="team-image">
+      <img src="assets/images/about/owner.jpg" alt="Owner of Everyday We Waffling">
+    </div>
+
+    <div class="team-text">
+      <h2>Built With Passion</h2>
+      <p>
+        Everyday We Waffling is proudly local and owner-led.
+        Our commitment is simple: deliver quality, consistency,
+        and a dessert experience that keeps you coming back.
+      </p>
+
+      <p>
+        We don’t just serve waffles.
+        We serve memories.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="about-cta reveal">
+  <div class="container">
+    <h2>Come Experience It Yourself</h2>
+    <p>Visit us in-store or explore our menu online today.</p>
+    <a href="menu.html" class="btn-primary">View Menu</a>
+  </div>
+</section>
+
+<div id="footer"></div>
+
+<script src="components/component.js"></script>
+
+<script>
+const reveals = document.querySelectorAll(".reveal");
+
+const observer = new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add("active");
+    }
+  });
+},{ threshold:0.15 });
+
+reveals.forEach(reveal=>{
+  observer.observe(reveal);
+});
+</script>
+
+</body>
+</html>

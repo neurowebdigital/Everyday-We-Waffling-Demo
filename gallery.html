@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gallery | Everyday We Waffling</title>
+
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/gallery.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<div id="header"></div>
+
+<!-- HERO -->
+<section class="gallery-hero reveal">
+  <div class="container">
+    <h1>Moments Worth Sharing</h1>
+    <p>
+      From golden waffles to over-the-top milkshakes —
+      every creation is made to impress.
+    </p>
+  </div>
+</section>
+
+<!-- GALLERY GRID -->
+<section class="gallery-section reveal">
+  <div class="container">
+
+    <div class="gallery-grid">
+
+      <!-- Replace with their real Instagram images later -->
+
+      <div class="gallery-item">
+        <img src="assets/images/gallery/gallery1.jpg" alt="Waffle">
+      </div>
+
+      <div class="gallery-item tall">
+        <img src="assets/images/gallery/gallery2.jpg" alt="Milkshake">
+      </div>
+
+      <div class="gallery-item">
+        <img src="assets/images/gallery/gallery3.jpg" alt="Dessert">
+      </div>
+
+      <div class="gallery-item wide">
+        <img src="assets/images/gallery/gallery4.jpg" alt="Interior">
+      </div>
+
+      <div class="gallery-item">
+        <img src="assets/images/gallery/gallery5.jpg" alt="Ice Cream">
+      </div>
+
+      <div class="gallery-item">
+        <img src="assets/images/gallery/gallery6.jpg" alt="Chocolate Waffle">
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- INSTAGRAM CTA -->
+<section class="gallery-cta reveal">
+  <div class="container">
+    <h2>Tag Us & Get Featured</h2>
+    <p>@everydaywewaffling</p>
+    <a href="#" class="btn-primary">Follow On Instagram</a>
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <span class="close-lightbox">&times;</span>
+  <img id="lightbox-img" src="">
+</div>
+
+<div id="footer"></div>
+
+<script src="components/component.js"></script>
+
+<script>
+const reveals = document.querySelectorAll(".reveal");
+
+const observer = new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add("active");
+    }
+  });
+},{ threshold:0.15 });
+
+reveals.forEach(reveal=>{
+  observer.observe(reveal);
+});
+
+/* Lightbox */
+const galleryImages = document.querySelectorAll(".gallery-item img");
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightbox-img");
+const closeLightbox = document.querySelector(".close-lightbox");
+
+galleryImages.forEach(img=>{
+  img.addEventListener("click",()=>{
+    lightbox.style.display = "flex";
+    lightboxImg.src = img.src;
+  });
+});
+
+closeLightbox.addEventListener("click",()=>{
+  lightbox.style.display = "none";
+});
+</script>
+
+</body>
+</html>

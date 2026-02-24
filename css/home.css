@@ -1,0 +1,350 @@
+/* =========================
+   HERO
+========================= */
+
+.hero{
+  background:#f7efe5;
+  text-align:center;
+  padding-top:140px;
+  padding-bottom:140px;
+}
+
+.hero-content{
+  max-width:800px;
+  margin:0 auto;
+}
+
+.hero-tagline{
+  display:block;
+  font-size:12px;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  color:#8c4b3c;
+  margin-bottom:24px;
+  font-weight:500;
+}
+
+.hero h1{
+  font-size:54px;
+  color:#3a2323;
+  margin-bottom:28px;
+}
+
+.hero p{
+  font-size:18px;
+  color:#5c3b33;
+  margin-bottom:45px;
+}
+
+.hero-buttons{
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+.micro-trust{
+  margin-top:35px;
+  font-size:14px;
+  color:#6b4a42;
+}
+
+/* =========================
+   TRUST BAR
+========================= */
+
+.social-proof{
+  background:#ffffff;
+  padding:70px 0;
+  border-top:1px solid rgba(0,0,0,0.05);
+  border-bottom:1px solid rgba(0,0,0,0.05);
+}
+
+.proof-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:30px;
+  text-align:center;
+  font-weight:500;
+  color:#3a2323;
+}
+
+.proof-grid div{
+  padding:15px 0;
+}
+
+/* =========================
+   BEST SELLERS
+========================= */
+
+.best-sellers{
+  background:#ffffff;
+}
+
+.best-sellers h2{
+  text-align:center;
+  font-size:40px;
+  margin-bottom:18px;
+}
+
+.section-sub{
+  text-align:center;
+  margin-bottom:70px;
+  color:#6b4a42;
+}
+
+.products-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:50px;
+}
+
+.product-card{
+  background:#fdfaf7;
+  border-radius:12px; /* reduced from 18px */
+  padding:28px;
+  box-shadow:0 20px 40px rgba(0,0,0,0.05);
+  display:flex;
+  flex-direction:column;
+  transition:transform .3s ease, box-shadow .3s ease;
+}
+
+.product-card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 25px 50px rgba(0,0,0,0.07);
+}
+
+.product-card img{
+  width:100%;
+  border-radius:10px; /* reduced */
+  margin-bottom:20px;
+  transition:transform .4s ease;
+}
+
+.product-card:hover img{
+  transform:scale(1.04);
+}
+
+.product-card h3{
+  margin-bottom:12px;
+  font-size:18px;
+}
+
+.product-card p{
+  margin-bottom:16px;
+  font-size:14px;
+  color:#6b4a42;
+}
+
+.price{
+  margin-top:auto;
+  font-weight:600;
+  color:#8c4b3c;
+}
+
+/* =========================
+   ONLINE ORDER
+========================= */
+
+.online-order{
+  background:#f7efe5;
+  padding:130px 0;
+}
+
+.order-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:90px;
+  align-items:center;
+}
+
+.order-text h2{
+  font-size:40px;
+  margin-bottom:24px;
+}
+
+.order-text p{
+  margin-bottom:28px;
+}
+
+.order-text ul{
+  list-style:none;
+  padding:0;
+  margin-bottom:35px;
+}
+
+.order-text li{
+  margin-bottom:12px;
+  font-size:15px;
+}
+
+.order-image img{
+  width:100%;
+  border-radius:14px;
+  transition:transform .4s ease;
+}
+
+.order-image img:hover{
+  transform:scale(1.02);
+}
+
+/* =========================
+   EVENTS
+========================= */
+
+.events{
+  background:#ffffff;
+  text-align:center;
+  padding:130px 0;
+}
+
+.events h2{
+  font-size:40px;
+  margin-bottom:70px;
+}
+
+.events-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:60px;
+}
+
+.events-grid div{
+  padding:10px 20px;
+}
+
+.events-grid h3{
+  margin-bottom:12px;
+  font-size:18px;
+}
+
+/* =========================
+   LOCATIONS
+========================= */
+
+.locations{
+  background:#f7efe5;
+  text-align:center;
+  padding:120px 0;
+}
+
+.location-box{
+  max-width:500px;
+  margin:40px auto 0;
+  background:#ffffff;
+  padding:40px;
+  border-radius:12px;
+  box-shadow:0 20px 40px rgba(0,0,0,0.05);
+}
+
+/* =========================
+   TESTIMONIALS
+========================= */
+
+.testimonials{
+  background:#ffffff;
+  text-align:center;
+  padding:120px 0;
+}
+
+.testimonials h2{
+  margin-bottom:40px;
+}
+
+.testimonial{
+  max-width:650px;
+  margin:0 auto;
+  font-size:17px;
+  font-style:italic;
+  color:#5c3b33;
+}
+
+/* =========================
+   INSTAGRAM
+========================= */
+
+.instagram{
+  background:#f7efe5;
+  text-align:center;
+  padding:120px 0;
+}
+
+.instagram h2{
+  margin-bottom:12px;
+}
+
+.instagram p{
+  margin-bottom:60px;
+}
+
+.insta-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+
+.insta-grid img{
+  width:100%;
+  height:230px;
+  object-fit:cover;
+  border-radius:12px;
+  transition:transform .4s ease;
+}
+
+.insta-grid img:hover{
+  transform:scale(1.03);
+}
+
+/* =========================
+   CTA
+========================= */
+
+.cta{
+  background:#ffffff; /* changed from dark brown */
+  color:#3a2323;
+  text-align:center;
+  padding:130px 0;
+  border-top:1px solid rgba(0,0,0,0.05);
+}
+
+.cta h2{
+  font-size:42px;
+  margin-bottom:20px;
+}
+
+.cta p{
+  margin-bottom:45px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:900px){
+
+  .hero h1{
+    font-size:36px;
+  }
+
+  .order-grid{
+    grid-template-columns:1fr;
+    gap:50px;
+  }
+
+  .insta-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+}
+
+@media(max-width:600px){
+
+  section{
+    padding:90px 0;
+  }
+
+  .insta-grid{
+    grid-template-columns:1fr;
+  }
+
+}
