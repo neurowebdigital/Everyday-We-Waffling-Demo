@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Events & Catering | Everyday We Waffling</title>
+
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/events.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<div id="header"></div>
+
+<!-- HERO -->
+<section class="events-hero reveal">
+  <div class="container">
+    <h1>Make Your Event Sweeter</h1>
+    <p>
+      From birthday parties to corporate functions —
+      we bring handcrafted waffles, premium desserts and unforgettable presentation.
+    </p>
+    <a href="#packages" class="btn-primary">View Packages</a>
+  </div>
+</section>
+
+
+<!-- EVENT TYPES -->
+<section class="event-types reveal">
+  <div class="container">
+
+    <h2>Perfect For Every Occasion</h2>
+
+    <div class="event-grid">
+
+      <div class="event-card">
+        <h3>🎉 Birthday Parties</h3>
+        <p>Custom waffle stations, dessert platters and themed presentation for unforgettable celebrations.</p>
+      </div>
+
+      <div class="event-card">
+        <h3>🏢 Corporate Functions</h3>
+        <p>Impress teams and clients with premium dessert catering and professional setup.</p>
+      </div>
+
+      <div class="event-card">
+        <h3>👨‍👩‍👧 Private Celebrations</h3>
+        <p>Baby showers, anniversaries and family gatherings made extra special.</p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- PACKAGES -->
+<section id="packages" class="event-packages reveal">
+  <div class="container">
+
+    <h2>Event Packages</h2>
+    <p class="section-sub">
+      Designed to suit different event sizes and budgets.
+    </p>
+
+    <div class="packages-grid">
+
+      <!-- STARTER -->
+      <div class="package-card">
+        <h3>Starter Package</h3>
+        <div class="price">From R1,500</div>
+
+        <ul>
+          <li>✔ 20 Waffle Portions</li>
+          <li>✔ 2 Topping Choices</li>
+          <li>✔ Basic Presentation Setup</li>
+          <li>✔ 1 Staff Member</li>
+        </ul>
+
+        <a href="#enquiry" class="btn-outline">Enquire Now</a>
+      </div>
+
+      <!-- PREMIUM -->
+      <div class="package-card featured">
+        <span class="popular-badge">Most Popular</span>
+        <h3>Premium Package</h3>
+        <div class="price">From R3,500</div>
+
+        <ul>
+          <li>✔ 50 Waffle Portions</li>
+          <li>✔ 4 Topping Choices</li>
+          <li>✔ Custom Decor Setup</li>
+          <li>✔ 2 Staff Members</li>
+          <li>✔ Milkshake Add-On Option</li>
+        </ul>
+
+        <a href="#enquiry" class="btn-primary">Enquire Now</a>
+      </div>
+
+      <!-- CUSTOM -->
+      <div class="package-card">
+        <h3>Custom Package</h3>
+        <div class="price">Tailored Pricing</div>
+
+        <ul>
+          <li>✔ Large Scale Events</li>
+          <li>✔ Corporate Catering</li>
+          <li>✔ Full Dessert Station</li>
+          <li>✔ Custom Branding Available</li>
+        </ul>
+
+        <a href="#enquiry" class="btn-outline">Request Quote</a>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- EVENT GALLERY STRIP -->
+<section class="event-gallery reveal">
+  <div class="container">
+    <h2>Recent Events</h2>
+
+    <div class="event-gallery-grid">
+      <img src="assets/images/events/event1.jpg" alt="">
+      <img src="assets/images/events/event2.jpg" alt="">
+      <img src="assets/images/events/event3.jpg" alt="">
+    </div>
+  </div>
+</section>
+
+
+<!-- ENQUIRY FORM -->
+<section id="enquiry" class="event-enquiry reveal">
+  <div class="container">
+
+    <h2>Enquire About Your Event</h2>
+    <p>Tell us about your event and we’ll get back to you with options.</p>
+
+    <form class="event-form">
+
+      <div class="form-row">
+        <input type="text" placeholder="Full Name" required>
+        <input type="email" placeholder="Email Address" required>
+      </div>
+
+      <div class="form-row">
+        <input type="text" placeholder="Event Date">
+        <input type="text" placeholder="Number of Guests">
+      </div>
+
+      <textarea rows="5" placeholder="Tell us about your event..." required></textarea>
+
+      <button type="submit" class="btn-primary">Submit Enquiry</button>
+
+    </form>
+
+    <a href="https://wa.me/27717946682" class="whatsapp-quick">
+      Or Message Us Directly On WhatsApp
+    </a>
+
+  </div>
+</section>
+
+
+<!-- FINAL CTA -->
+<section class="events-cta reveal">
+  <div class="container">
+    <h2>Let’s Create Something Unforgettable</h2>
+    <a href="contact.html" class="btn-primary">Contact Us</a>
+  </div>
+</section>
+
+
+<div id="footer"></div>
+
+<script src="components/component.js"></script>
+
+<script>
+const reveals = document.querySelectorAll(".reveal");
+
+const observer = new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add("active");
+    }
+  });
+},{ threshold:0.15 });
+
+reveals.forEach(reveal=>{
+  observer.observe(reveal);
+});
+</script>
+
+</body>
+</html>
