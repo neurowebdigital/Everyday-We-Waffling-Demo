@@ -109,26 +109,56 @@
 
 
 /* =========================
-   MAP SECTION
+   MAP GRID
 ========================= */
 
 .contact-map{
-  background:#f7efe5;
-  padding:130px 0;
+  background:#fdfaf7;
+  padding:120px 0;
   text-align:center;
 }
 
 .contact-map h2{
-  font-size:42px;
-  margin-bottom:40px;
+  margin-bottom:50px;
 }
 
-.map-wrapper{
+.map-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:40px;
+}
+
+.map-card{
+  background:#fff;
+  padding:20px;
   border-radius:18px;
-  overflow:hidden;
-  box-shadow:0 25px 60px rgba(0,0,0,0.08);
+  box-shadow:0 15px 40px rgba(0,0,0,0.06);
+  transition:.3s ease;
 }
 
+.map-card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 25px 55px rgba(0,0,0,0.08);
+}
+
+.map-card h3{
+  margin-bottom:15px;
+}
+
+.map-card iframe{
+  width:100%;
+  height:350px;
+  border:none;
+  border-radius:14px;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+  .map-grid{
+    grid-template-columns:1fr;
+  }
+}
 
 /* =========================
    CTA SECTION

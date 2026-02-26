@@ -1,0 +1,295 @@
+/* =========================
+   HERO
+========================= */
+
+.events-hero{
+  background:url('../assets/images/events/event1.jpg') center/cover no-repeat;
+  position:relative;
+  text-align:center;
+  color:#fff;
+  padding:180px 0 140px;
+}
+
+.events-hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.5);
+}
+
+.events-hero .container{
+  position:relative;
+  z-index:2;
+}
+
+.events-hero h1{
+  font-size:56px;
+  margin-bottom:20px;
+}
+
+.events-hero p{
+  max-width:650px;
+  margin:0 auto 35px;
+  font-size:18px;
+  opacity:.9;
+}
+
+/* =========================
+   EVENT TYPES
+========================= */
+
+.event-types{
+  background:#fff;
+  text-align:center;
+}
+
+.event-types h2{
+  margin-bottom:50px;
+}
+
+.event-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:30px;
+}
+
+.event-card{
+  background:#fdfaf7;
+  padding:40px 30px;
+  border-radius:16px;
+  transition:.35s ease;
+}
+
+.event-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 15px 35px rgba(0,0,0,0.06);
+}
+
+.event-card h3{
+  margin-bottom:15px;
+}
+
+/* =========================
+   PACKAGES
+========================= */
+
+.event-packages{
+  background:#f7efe5;
+  text-align:center;
+}
+
+.section-sub{
+  margin:10px auto 40px;
+  max-width:500px;
+}
+
+/* Pricing Toggle */
+
+.pricing-toggle{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  margin-bottom:40px;
+}
+
+.toggle-btn{
+  padding:8px 18px;
+  border-radius:20px;
+  border:1px solid #8c4b3c;
+  background:transparent;
+  color:#8c4b3c;
+  cursor:pointer;
+  font-size:13px;
+  transition:.25s ease;
+}
+
+.toggle-btn.active,
+.toggle-btn:hover{
+  background:#8c4b3c;
+  color:#fff;
+}
+
+.packages-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:30px;
+}
+
+.package-card{
+  background:#fff;
+  padding:40px 30px;
+  border-radius:18px;
+  position:relative;
+  transition:all .35s cubic-bezier(.2,.8,.2,1);
+}
+
+.package-card:hover{
+  transform:translateY(-8px) scale(1.02);
+  box-shadow:0 25px 55px rgba(0,0,0,0.08);
+}
+
+.package-card h3{
+  margin-bottom:10px;
+}
+
+.price{
+  font-size:22px;
+  color:#8c4b3c;
+  margin-bottom:20px;
+}
+
+.package-card ul{
+  list-style:none;
+  margin-bottom:25px;
+}
+
+.package-card li{
+  margin-bottom:10px;
+  font-size:14px;
+}
+
+/* Featured */
+
+.package-card.featured{
+  border:2px solid #8c4b3c;
+  transform:scale(1.05);
+  box-shadow:0 15px 40px rgba(140,75,60,0.15);
+}
+
+.popular-badge{
+  position:absolute;
+  top:-12px;
+  left:50%;
+  transform:translateX(-50%);
+  background:#8c4b3c;
+  color:#fff;
+  font-size:12px;
+  padding:4px 10px;
+  border-radius:20px;
+}
+
+/* =========================
+   EVENT GALLERY
+========================= */
+
+.event-gallery{
+  text-align:center;
+  background:#fff;
+}
+
+.event-gallery-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
+  margin-top:40px;
+}
+
+.event-gallery-grid img{
+  width:100%;
+  border-radius:14px;
+  object-fit:cover;
+  transition:.3s ease;
+}
+
+.event-gallery-grid img:hover{
+  transform:scale(1.03);
+}
+
+/* =========================
+   CTA BANNER
+========================= */
+
+.events-banner{
+  background:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),
+  url('../assets/images/events/event2.jpg') center/cover no-repeat;
+  color:#fff;
+  text-align:center;
+  padding:120px 0;
+}
+
+.events-banner h2{
+  font-size:42px;
+  margin-bottom:20px;
+}
+
+.events-banner p{
+  margin-bottom:30px;
+  opacity:.9;
+}
+
+/* =========================
+   ENQUIRY FORM
+========================= */
+
+.event-enquiry{
+  background:#f7efe5;
+  text-align:center;
+}
+
+.event-form{
+  max-width:600px;
+  margin:40px auto 20px;
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+}
+
+.form-row{
+  display:flex;
+  gap:15px;
+}
+
+.event-form input,
+.event-form textarea{
+  width:100%;
+  padding:14px;
+  border-radius:10px;
+  border:1px solid rgba(0,0,0,0.1);
+}
+
+.event-form input:focus,
+.event-form textarea:focus{
+  outline:none;
+  border-color:#8c4b3c;
+}
+
+.whatsapp-quick{
+  display:inline-block;
+  margin-top:20px;
+  color:#8c4b3c;
+  text-decoration:none;
+  font-weight:500;
+}
+
+/* =========================
+   FINAL CTA
+========================= */
+
+.events-cta{
+  text-align:center;
+  background:#fff;
+}
+
+.events-cta h2{
+  margin-bottom:20px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:768px){
+
+.events-hero h1{
+  font-size:36px;
+}
+
+.form-row{
+  flex-direction:column;
+}
+
+.package-card.featured{
+  transform:none;
+}
+
+}
