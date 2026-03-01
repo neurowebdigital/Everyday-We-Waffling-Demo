@@ -53,6 +53,20 @@
   </div>
 </section>
 
+<!-- FOUNDER QUOTE -->
+<section class="founder-quote reveal">
+  <div class="container">
+    <blockquote>
+      “We started Everyday We Waffling with one goal —
+      to create a place where people don’t just eat dessert,
+      but share moments.”
+    </blockquote>
+    <span class="quote-author">
+      — Founder, Everyday We Waffling
+    </span>
+  </div>
+</section>
+
 <!-- VALUES -->
 <section class="about-values reveal">
   <div class="container">
@@ -86,7 +100,40 @@
   </div>
 </section>
 
-<!-- TEAM / OWNER SECTION -->
+<!-- TIMELINE -->
+<section class="about-timeline reveal">
+  <div class="container">
+
+    <h2>Our Journey</h2>
+
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <h4>2019</h4>
+        <p>The first waffle served in Cape Town.</p>
+      </div>
+
+      <div class="timeline-item">
+        <h4>2021</h4>
+        <p>Expanded menu with milkshakes & dessert specials.</p>
+      </div>
+
+      <div class="timeline-item">
+        <h4>2023</h4>
+        <p>Started catering for events & private bookings.</p>
+      </div>
+
+      <div class="timeline-item">
+        <h4>Today</h4>
+        <p>A local favourite for sweet moments.</p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- TEAM / OWNER -->
 <section class="about-team reveal">
   <div class="container team-grid">
 
@@ -111,6 +158,22 @@
   </div>
 </section>
 
+<!-- COMMUNITY -->
+<section class="community-strip reveal">
+  <div class="container">
+
+    <h2>Part of the Community</h2>
+    <p>Celebrating birthdays, date nights and family moments every day.</p>
+
+    <div class="community-images">
+      <img src="assets/images/waffle.jpeg">
+      <img src="assets/images/sprinkle.jpeg">
+      <img src="assets/images/marsh.jpeg">
+    </div>
+
+  </div>
+</section>
+
 <!-- FINAL CTA -->
 <section class="about-cta reveal">
   <div class="container">
@@ -125,7 +188,7 @@
 <script src="components/component.js"></script>
 
 <script>
-const reveals = document.querySelectorAll(".reveal");
+const reveals = document.querySelectorAll(".reveal, .value-card, .timeline-item");
 
 const observer = new IntersectionObserver(entries=>{
   entries.forEach(entry=>{

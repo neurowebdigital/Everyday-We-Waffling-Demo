@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -108,7 +107,7 @@
 
 <script>
 /* ================= SCROLL REVEAL ================= */
-const reveals = document.querySelectorAll(".reveal");
+const reveals = document.querySelectorAll(".reveal, .gallery-item");
 
 const observer = new IntersectionObserver(entries=>{
   entries.forEach(entry=>{
@@ -137,6 +136,19 @@ galleryImages.forEach(img=>{
 
 closeLightbox.addEventListener("click",()=>{
   lightbox.style.display = "none";
+});
+
+let startX = 0;
+
+lightbox.addEventListener("touchstart", e => {
+  startX = e.touches[0].clientX;
+});
+
+lightbox.addEventListener("touchend", e => {
+  let endX = e.changedTouches[0].clientX;
+  if(Math.abs(startX - endX) > 50){
+    lightbox.style.display = "none";
+  }
 });
 
 /* Close on background click */

@@ -5,20 +5,20 @@
 .about-hero{
   background:#f7efe5;
   text-align:center;
-  padding:150px 0 110px;
+  padding:160px 20px 120px;
 }
 
 .about-hero h1{
   font-size:52px;
-  margin-bottom:20px;
+  margin-bottom:18px;
   color:#3a2323;
 }
 
 .about-hero p{
-  font-size:18px;
-  max-width:700px;
+  font-size:17px;
+  max-width:650px;
   margin:0 auto;
-  color:#5c3b33;
+  color:#6b4a42;
 }
 
 
@@ -39,25 +39,51 @@
 }
 
 .story-text h2{
-  font-size:42px;
-  margin-bottom:25px;
+  font-size:40px;
+  margin-bottom:22px;
+  color:#3a2323;
 }
 
 .story-text p{
-  margin-bottom:20px;
+  margin-bottom:18px;
   color:#6b4a42;
   line-height:1.7;
 }
 
 .story-image img{
   width:100%;
-  border-radius:18px;
-  box-shadow:0 25px 60px rgba(0,0,0,0.08);
-  transition:transform .4s ease;
+  border-radius:14px;
+  box-shadow:0 20px 50px rgba(0,0,0,0.06);
+  transition:transform .35s ease;
 }
 
 .story-image img:hover{
-  transform:scale(1.03);
+  transform:scale(1.02);
+}
+
+
+/* =========================
+   FOUNDER QUOTE
+========================= */
+
+.founder-quote{
+  background:#ffffff;
+  text-align:center;
+  padding:120px 0;
+}
+
+.founder-quote blockquote{
+  font-size:28px;
+  max-width:700px;
+  margin:0 auto 20px;
+  line-height:1.5;
+  color:#3a2323;
+  font-family:'Playfair Display', serif;
+}
+
+.quote-author{
+  font-size:14px;
+  color:#8c4b3c;
 }
 
 
@@ -72,38 +98,73 @@
 }
 
 .about-values h2{
-  font-size:42px;
-  margin-bottom:70px;
+  font-size:40px;
+  margin-bottom:60px;
+  color:#3a2323;
 }
 
 .values-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:40px;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:30px;
 }
 
 .value-card{
   background:#ffffff;
-  padding:40px 30px;
-  border-radius:18px;
-  box-shadow:0 20px 50px rgba(0,0,0,0.05);
-  transition:all .3s ease;
+  padding:35px 25px;
+  border-radius:14px;
+  box-shadow:0 15px 40px rgba(0,0,0,0.05);
+  transition:.3s ease;
 }
 
 .value-card:hover{
-  transform:translateY(-8px);
-  box-shadow:0 25px 60px rgba(0,0,0,0.08);
+  transform:translateY(-5px);
+  box-shadow:0 25px 55px rgba(0,0,0,0.08);
 }
 
 .value-card h3{
-  margin-bottom:15px;
-  font-size:20px;
+  margin-bottom:12px;
+  font-size:18px;
   color:#3a2323;
 }
 
 .value-card p{
   font-size:14px;
   color:#6b4a42;
+}
+
+
+/* =========================
+   TIMELINE
+========================= */
+
+.about-timeline{
+  background:#f7efe5;
+  text-align:center;
+  padding:130px 0;
+}
+
+.about-timeline h2{
+  margin-bottom:50px;
+  color:#3a2323;
+}
+
+.timeline{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:30px;
+}
+
+.timeline-item{
+  background:#fff;
+  padding:25px;
+  border-radius:14px;
+  box-shadow:0 15px 40px rgba(0,0,0,0.05);
+}
+
+.timeline-item h4{
+  color:#8c4b3c;
+  margin-bottom:10px;
 }
 
 
@@ -125,24 +186,52 @@
 
 .team-image img{
   width:100%;
-  border-radius:18px;
-  box-shadow:0 25px 60px rgba(0,0,0,0.08);
-  transition:transform .4s ease;
+  border-radius:14px;
+  box-shadow:0 20px 50px rgba(0,0,0,0.06);
+  transition:transform .35s ease;
 }
 
 .team-image img:hover{
-  transform:scale(1.03);
+  transform:scale(1.02);
 }
 
 .team-text h2{
-  font-size:42px;
-  margin-bottom:25px;
+  font-size:40px;
+  margin-bottom:22px;
+  color:#3a2323;
 }
 
 .team-text p{
-  margin-bottom:20px;
+  margin-bottom:18px;
   color:#6b4a42;
   line-height:1.7;
+}
+
+
+/* =========================
+   COMMUNITY STRIP
+========================= */
+
+.community-strip{
+  background:#ffffff;
+  text-align:center;
+  padding:120px 0;
+}
+
+.community-strip p{
+  margin-bottom:30px;
+  color:#6b4a42;
+}
+
+.community-images{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+
+.community-images img{
+  width:100%;
+  border-radius:14px;
 }
 
 
@@ -151,20 +240,20 @@
 ========================= */
 
 .about-cta{
-  background:#3a2323;
-  color:#fff;
+  background:#f7efe5;
   text-align:center;
-  padding:140px 0;
+  padding:120px 0;
 }
 
 .about-cta h2{
-  font-size:44px;
-  margin-bottom:20px;
+  font-size:38px;
+  margin-bottom:15px;
+  color:#3a2323;
 }
 
 .about-cta p{
-  margin-bottom:35px;
-  opacity:.9;
+  margin-bottom:28px;
+  color:#6b4a42;
 }
 
 
@@ -172,7 +261,12 @@
    RESPONSIVE
 ========================= */
 
+/* Tablet */
 @media(max-width:900px){
+
+  .about-hero{
+    padding:130px 20px 90px;
+  }
 
   .about-hero h1{
     font-size:38px;
@@ -186,16 +280,126 @@
 
   .about-story,
   .about-values,
-  .about-team{
+  .about-team,
+  .about-timeline{
     padding:90px 0;
   }
 
 }
 
+/* =========================
+   SECTION REVEAL
+========================= */
+
+.reveal{
+  opacity:0;
+  transform:translateY(30px);
+  transition:all .7s ease;
+}
+
+.reveal.active{
+  opacity:1;
+  transform:translateY(0);
+}
+
+
+/* =========================
+   IMAGE SOFT ZOOM
+========================= */
+
+.story-image img,
+.team-image img,
+.community-images img{
+  transform:scale(0.97);
+  transition:transform 1.2s ease;
+}
+
+.reveal.active .story-image img,
+.reveal.active .team-image img,
+.reveal.active .community-images img{
+  transform:scale(1);
+}
+
+
+/* =========================
+   STAGGERED VALUE CARDS
+========================= */
+
+.value-card{
+  opacity:0;
+  transform:translateY(20px);
+  transition:.6s ease;
+}
+
+.reveal.active .value-card:nth-child(1){ transition-delay:.1s; }
+.reveal.active .value-card:nth-child(2){ transition-delay:.2s; }
+.reveal.active .value-card:nth-child(3){ transition-delay:.3s; }
+.reveal.active .value-card:nth-child(4){ transition-delay:.4s; }
+
+.reveal.active .value-card{
+  opacity:1;
+  transform:translateY(0);
+}
+
+
+/* =========================
+   TIMELINE POP
+========================= */
+
+.timeline-item{
+  opacity:0;
+  transform:scale(.95);
+  transition:.5s ease;
+}
+
+.reveal.active .timeline-item{
+  opacity:1;
+  transform:scale(1);
+}
+
+
+/* =========================
+   COMMUNITY FADE
+========================= */
+
+.community-images img{
+  opacity:0;
+  transform:translateY(15px);
+  transition:.6s ease;
+}
+
+.reveal.active .community-images img{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* Mobile */
 @media(max-width:600px){
 
   .about-hero{
-    padding:110px 0 80px;
+    padding:110px 20px 70px;
+  }
+
+  .about-hero h1{
+    font-size:30px;
+  }
+
+  .story-text h2,
+  .team-text h2{
+    font-size:28px;
+  }
+
+  .about-values h2,
+  .about-timeline h2{
+    font-size:30px;
+  }
+
+  .founder-quote blockquote{
+    font-size:20px;
+  }
+
+  .community-images{
+    grid-template-columns:1fr;
   }
 
 }
