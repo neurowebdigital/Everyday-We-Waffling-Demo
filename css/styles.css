@@ -30,8 +30,6 @@ body{
   background:var(--cream);
   line-height:1.6;
   overflow-x:hidden;
-
-  /* Prevent content hiding under fixed header */
   padding-top:90px;
 }
 
@@ -99,11 +97,10 @@ p{
 .btn-outline:hover{
   background:var(--accent);
   color:#fff;
-  transform:translateY(-3px);
 }
 
 /* =========================
-   FIXED HEADER
+   HEADER
 ========================= */
 
 .site-header{
@@ -115,13 +112,6 @@ p{
   z-index:999;
   box-shadow:0 4px 20px rgba(0,0,0,0.05);
   backdrop-filter:blur(6px);
-  transition:.3s ease;
-}
-
-/* Header shrink on scroll */
-
-.site-header.scrolled{
-  box-shadow:0 8px 25px rgba(0,0,0,0.08);
 }
 
 .navbar{
@@ -129,13 +119,6 @@ p{
   grid-template-columns:auto 1fr auto;
   align-items:center;
   height:80px;
-  padding:20px 0;
-  transition:.3s ease;
-}
-
-.site-header.scrolled .navbar{
-  height:65px;
-  padding:10px 0;
 }
 
 /* =========================
@@ -148,7 +131,6 @@ p{
   gap:12px;
   font-size:18px;
   font-weight:600;
-  color:var(--brown);
   text-decoration:none;
 }
 
@@ -159,7 +141,7 @@ p{
   border-radius:8px;
 }
 
-.logo span{
+.logo-text{
   color:var(--accent);
 }
 
@@ -185,37 +167,9 @@ p{
   opacity:.85;
 }
 
-/* Underline */
-
-.nav-links a::after{
-  content:"";
-  position:absolute;
-  bottom:-8px;
-  left:50%;
-  transform:translateX(-50%);
-  width:0;
-  height:2px;
-  background:var(--accent);
-  border-radius:10px;
-  transition:.35s ease;
-}
-
 .nav-links a:hover{
   opacity:1;
   transform:translateY(-2px);
-}
-
-.nav-links a:hover::after{
-  width:60%;
-}
-
-.nav-links a.active{
-  color:var(--accent);
-  opacity:1;
-}
-
-.nav-links a.active::after{
-  width:60%;
 }
 
 /* =========================
@@ -229,16 +183,31 @@ p{
 
 .hamburger{
   display:none;
-  cursor:pointer;
   flex-direction:column;
-  gap:4px;
+  gap:5px;
+  cursor:pointer;
 }
 
 .hamburger span{
-  width:24px;
+  width:25px;
   height:3px;
   background:var(--brown);
   border-radius:2px;
+  transition:.3s ease;
+}
+
+/* Animate to X */
+
+.hamburger.active span:nth-child(1){
+  transform:rotate(45deg) translateY(6px);
+}
+
+.hamburger.active span:nth-child(2){
+  opacity:0;
+}
+
+.hamburger.active span:nth-child(3){
+  transform:rotate(-45deg) translateY(-6px);
 }
 
 /* =========================
@@ -277,11 +246,6 @@ p{
 .site-footer a{
   color:var(--accent);
   text-decoration:none;
-  transition:.3s ease;
-}
-
-.site-footer a:hover{
-  color:var(--brown);
 }
 
 .footer-bottom{
@@ -307,63 +271,77 @@ p{
 }
 
 /* =========================
-   RESPONSIVE
+   MOBILE NAV FIX
 ========================= */
 
 @media(max-width:900px){
 
-  section{
-    padding:90px 0;
+  body{
+    padding-top:75px;
   }
 
   .navbar{
     grid-template-columns:auto auto;
+    height:70px;
   }
 
-  .nav-links{
-    position:absolute;
-    top:80px;
-    right:0;
-    width:260px;
-    background:#ffffff;
-    flex-direction:column;
-    padding:30px;
-    gap:25px;
-    box-shadow:0 20px 40px rgba(0,0,0,0.1);
-    transform:translateX(100%);
-    opacity:0;
-    transition:.3s ease;
+  /* Hide company name on mobile */
+  .logo-text{
+    display:none;
   }
 
-  .nav-links.active{
-    transform:translateX(0);
-    opacity:1;
+  .logo img{
+    width:36px;
+    height:36px;
   }
 
   .hamburger{
     display:flex;
-    justify-self:end;
+  }
+
+  .nav-links{
+    position:fixed;
+    top:70px;
+    left:0;
+    width:100%;
+    background:#fff;
+    flex-direction:column;
+    padding:25px 0;
+    gap:20px;
+    box-shadow:0 20px 40px rgba(0,0,0,0.08);
+
+    transform:translateY(-15px);
+    opacity:0;
+    pointer-events:none;
+    transition:.25s ease;
+  }
+
+  .nav-links.active{
+    transform:translateY(0);
+    opacity:1;
+    pointer-events:auto;
+  }
+
+  .nav-links li{
+    text-align:center;
+  }
+
+  .nav-links a{
+    font-size:16px;
+    display:block;
+    padding:12px 0;
   }
 
 }
 
 @media(max-width:600px){
 
-  body{
-    padding-top:80px;
+  .navbar{
+    height:65px;
   }
 
   section{
     padding:80px 0;
-  }
-
-  .logo img{
-    width:34px;
-    height:34px;
-  }
-
-  .logo span{
-    font-size:16px;
   }
 
 }
