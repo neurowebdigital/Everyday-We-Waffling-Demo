@@ -1,4 +1,86 @@
 /* =========================
+   FIXED MENU NAV
+========================= */
+
+.menu-nav{
+  position:fixed;
+  top:80px; /* match header height */
+  left:0;
+  width:100%;
+  background:#ffffff;
+  z-index:998;
+  border-bottom:1px solid rgba(0,0,0,0.05);
+  box-shadow:0 4px 15px rgba(0,0,0,0.04);
+  transition:.3s ease;
+}
+
+/* When header shrinks */
+
+.site-header.scrolled + .menu-nav{
+  top:65px;
+}
+
+.menu-nav-inner{
+  display:flex;
+  gap:40px;
+  overflow-x:auto;
+  padding:12px 20px;
+  justify-content:center;
+  scrollbar-width:none;
+}
+
+.menu-nav-inner::-webkit-scrollbar{
+  display:none;
+}
+
+.menu-nav a{
+  text-decoration:none;
+  color:#3a2323;
+  font-size:14px;
+  font-weight:500;
+  white-space:nowrap;
+  position:relative;
+  transition:.25s ease;
+}
+
+.menu-nav a:hover{
+  color:#8c4b3c;
+}
+
+.menu-nav a.active::after{
+  content:"";
+  position:absolute;
+  bottom:-6px;
+  left:50%;
+  transform:translateX(-50%);
+  width:60%;
+  height:2px;
+  background:#8c4b3c;
+  border-radius:10px;
+}
+
+/* Offset menu page for double fixed header */
+
+.menu-hero{
+  margin-top:60px;
+}
+
+@media(max-width:600px){
+
+  .menu-nav{
+    top:80px;
+  }
+
+  .menu-nav-inner{
+    justify-content:flex-start;
+    gap:25px;
+  }
+
+}
+
+
+
+/* =========================
    MENU HERO
 ========================= */
 

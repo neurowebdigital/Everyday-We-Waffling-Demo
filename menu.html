@@ -15,6 +15,18 @@
 
 <div id="header"></div>
 
+<!-- CATEGORY NAV -->
+<nav class="menu-nav">
+  <div class="menu-nav-inner">
+
+    <a href="#waffles">Waffles</a>
+    <a href="#boats">Boats & Boxes</a>
+    <a href="#milkshakes">Milkshakes</a>
+    <a href="#toppings">Toppings</a>
+
+  </div>
+</nav>
+
 <!-- HERO -->
 <section class="menu-hero reveal">
   <div class="container">
@@ -858,6 +870,26 @@ const observer = new IntersectionObserver(entries=>{
 },{ threshold:0.15 });
 
 reveals.forEach(reveal=> observer.observe(reveal));
+
+});
+
+const menuLinks = document.querySelectorAll(".menu-nav a");
+
+window.addEventListener("scroll", () => {
+
+  let fromTop = window.scrollY + 150;
+
+  menuLinks.forEach(link => {
+    let section = document.querySelector(link.getAttribute("href"));
+
+    if(
+      section.offsetTop <= fromTop &&
+      section.offsetTop + section.offsetHeight > fromTop
+    ){
+      menuLinks.forEach(l => l.classList.remove("active"));
+      link.classList.add("active");
+    }
+  });
 
 });
 </script>
