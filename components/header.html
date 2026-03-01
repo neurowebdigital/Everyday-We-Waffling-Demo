@@ -5,11 +5,11 @@
       <!-- Logo -->
       <a href="index.html" class="logo">
         <img src="assets/images/logo.jpeg" alt="Everyday We Waffling Logo">
-        <span class="logo-text">Everyday We Waffling</span>
+        <span>Everyday We Waffling</span>
       </a>
 
       <!-- Navigation -->
-      <ul class="nav-links" id="nav-links">
+      <ul class="nav-links">
         <li><a href="index.html" data-page="index">Home</a></li>
         <li><a href="menu.html" data-page="menu">Menu</a></li>
         <li><a href="events.html" data-page="events">Events</a></li>
@@ -20,7 +20,7 @@
 
       <!-- Mobile Menu -->
       <div class="nav-actions">
-        <div class="hamburger" id="hamburger">
+       <div class="hamburger" id="hamburger">
           <span></span>
           <span></span>
           <span></span>
@@ -30,25 +30,3 @@
     </nav>
   </div>
 </header>
-
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  const hamburger = document.getElementById("hamburger");
-  const navLinks = document.getElementById("nav-links");
-
-  if(hamburger){
-    hamburger.addEventListener("click", () => {
-      hamburger.classList.toggle("active");
-      navLinks.classList.toggle("active");
-    });
-
-    // Close when clicking links (mobile UX)
-    document.querySelectorAll(".nav-links a").forEach(link => {
-      link.addEventListener("click", () => {
-        hamburger.classList.remove("active");
-        navLinks.classList.remove("active");
-      });
-    });
-  }
-});
-</script>
