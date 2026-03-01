@@ -30,8 +30,6 @@ body{
   background:var(--cream);
   line-height:1.6;
   overflow-x:hidden;
-
-  /* Prevent content hiding under fixed header */
   padding-top:90px;
 }
 
@@ -118,24 +116,20 @@ p{
   transition:.3s ease;
 }
 
-/* Header shrink on scroll */
-
 .site-header.scrolled{
   box-shadow:0 8px 25px rgba(0,0,0,0.08);
 }
 
 .navbar{
-  display:grid;
-  grid-template-columns:auto 1fr auto;
+  display:flex;
+  justify-content:space-between;
   align-items:center;
   height:80px;
-  padding:20px 0;
   transition:.3s ease;
 }
 
 .site-header.scrolled .navbar{
   height:65px;
-  padding:10px 0;
 }
 
 /* =========================
@@ -168,7 +162,6 @@ p{
 ========================= */
 
 .nav-links{
-  justify-self:end;
   display:flex;
   gap:50px;
   list-style:none;
@@ -184,8 +177,6 @@ p{
   transition:all .3s ease;
   opacity:.85;
 }
-
-/* Underline */
 
 .nav-links a::after{
   content:"";
@@ -239,6 +230,83 @@ p{
   height:3px;
   background:var(--brown);
   border-radius:2px;
+}
+
+/* =========================
+   MOBILE MENU UPGRADE
+========================= */
+
+.menu-overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.25);
+  backdrop-filter:blur(3px);
+  opacity:0;
+  pointer-events:none;
+  transition:.3s ease;
+  z-index:998;
+}
+
+.menu-overlay.active{
+  opacity:1;
+  pointer-events:auto;
+}
+
+/* Menu Panel */
+
+.nav-links{
+  z-index:999;
+}
+
+@media(max-width:900px){
+
+  .nav-links{
+    position:fixed;
+    top:0;
+    right:0;
+    width:80%;
+    max-width:320px;
+    height:100vh;
+    background:#fff;
+    flex-direction:column;
+    padding:80px 30px 40px;
+    gap:28px;
+    box-shadow:-10px 0 40px rgba(0,0,0,0.1);
+    transform:translateX(100%);
+    opacity:1;
+    pointer-events:none;
+    transition:.35s ease;
+  }
+
+  .nav-links.active{
+    transform:translateX(0);
+    pointer-events:auto;
+  }
+
+  /* Close Button */
+
+  .menu-close{
+    position:absolute;
+    top:25px;
+    right:25px;
+    font-size:24px;
+    cursor:pointer;
+    color:var(--brown);
+  }
+
+  /* Menu Links Styling */
+
+  .nav-links li{
+    width:100%;
+  }
+
+  .nav-links a{
+    font-size:18px;
+    padding:12px 0;
+    display:block;
+    border-bottom:1px solid rgba(0,0,0,0.05);
+  }
+
 }
 
 /* =========================
@@ -316,33 +384,32 @@ p{
     padding:90px 0;
   }
 
-  .navbar{
-    grid-template-columns:auto auto;
-  }
+  /* Mobile Nav Dropdown */
 
   .nav-links{
     position:absolute;
-    top:80px;
+    top:100%;
     right:0;
-    width:260px;
+    width:100%;
     background:#ffffff;
     flex-direction:column;
-    padding:30px;
-    gap:25px;
-    box-shadow:0 20px 40px rgba(0,0,0,0.1);
-    transform:translateX(100%);
+    padding:25px 0;
+    gap:20px;
+    box-shadow:0 15px 35px rgba(0,0,0,0.08);
+    transform:translateY(-10px);
     opacity:0;
+    pointer-events:none;
     transition:.3s ease;
   }
 
   .nav-links.active{
-    transform:translateX(0);
+    transform:translateY(0);
     opacity:1;
+    pointer-events:auto;
   }
 
   .hamburger{
     display:flex;
-    justify-self:end;
   }
 
 }
@@ -362,8 +429,10 @@ p{
     height:34px;
   }
 
+  /* 🚀 Remove brand name on mobile */
+
   .logo span{
-    font-size:16px;
+    display:none;
   }
 
 }
