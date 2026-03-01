@@ -17,6 +17,7 @@
 
 <!-- HERO -->
 <section class="hero reveal">
+
   <div class="container hero-content">
 
     <span class="hero-tagline">
@@ -45,6 +46,7 @@
     </p>
 
   </div>
+
 </section>
 
 <!-- TRUST STRIP -->
@@ -256,5 +258,12 @@ reveals.forEach(reveal=>{
 });
 </script>
 
+<script>
+window.addEventListener("scroll", function(){
+  const bg = document.querySelector(".hero-bg");
+  let offset = window.pageYOffset;
+  bg.style.transform = "scale(1.18) translateY(" + offset * 0.15 + "px)";
+});
+</script>
 </body>
 </html>

@@ -1,61 +1,72 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gallery | Everyday We Waffling</title>
 
+<title>Gallery | Everyday We Waffling</title>
+<meta name="description" content="Explore our signature waffles, luxury milkshakes and unforgettable dessert creations at Everyday We Waffling. Tag us to get featured!">
+
+<!-- Styles -->
 <link rel="stylesheet" href="css/styles.css">
 <link rel="stylesheet" href="css/gallery.css">
 
+<!-- Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
 
 <div id="header"></div>
 
-<!-- HERO -->
+<!-- ================= HERO ================= -->
 <section class="gallery-hero reveal">
   <div class="container">
+
+    <span class="eyebrow">Our Creations</span>
+
     <h1>Moments Worth Sharing</h1>
-    <p>
+
+    <p class="hero-subtext">
       From golden waffles to over-the-top milkshakes —
-      every creation is made to impress.
+      every creation is designed to impress, indulgent,
+      photogenic, and unforgettable.
     </p>
+
   </div>
 </section>
 
-<!-- GALLERY GRID -->
+<!-- ================= GALLERY ================= -->
 <section class="gallery-section reveal">
   <div class="container">
 
     <div class="gallery-grid">
 
-      <!-- Replace with their real Instagram images later -->
-
       <div class="gallery-item">
-        <img src="assets/images/waffle.jpeg" alt="Waffle">
+        <img src="assets/images/waffle.jpeg" alt="Signature waffle dessert" loading="lazy">
       </div>
 
       <div class="gallery-item tall">
-        <img src="assets/images/sprinkle.jpeg" alt="Milkshake">
+        <img src="assets/images/sprinkle.jpeg" alt="Luxury milkshake" loading="lazy">
       </div>
 
       <div class="gallery-item">
-        <img src="assets/images/marsh.jpeg" alt="Dessert">
+        <img src="assets/images/marsh.jpeg" alt="Marshmallow dessert waffle" loading="lazy">
       </div>
 
       <div class="gallery-item wide">
-        <img src="assets/images/special.jpeg" alt="Interior">
+        <img src="assets/images/special.jpeg" alt="Special waffle creation" loading="lazy">
       </div>
 
       <div class="gallery-item">
-        <img src="assets/images/icecream.jpeg" alt="Ice Cream">
+        <img src="assets/images/icecream.jpeg" alt="Ice cream waffle combo" loading="lazy">
       </div>
 
       <div class="gallery-item">
-        <img src="assets/images/waffle.jpeg" alt="Chocolate Waffle">
+        <img src="assets/images/waffle.jpeg" alt="Chocolate waffle" loading="lazy">
       </div>
 
     </div>
@@ -63,19 +74,32 @@
   </div>
 </section>
 
-<!-- INSTAGRAM CTA -->
+<!-- ================= INSTAGRAM CTA ================= -->
 <section class="gallery-cta reveal">
   <div class="container">
+
     <h2>Tag Us & Get Featured</h2>
-    <p>@everydaywewaffling</p>
-    <a href="#" class="btn-primary">Follow On Instagram</a>
+
+    <p class="insta-handle">@everydaywewaffling</p>
+
+    <a href="https://instagram.com/everydaywewaffling"
+       target="_blank"
+       rel="noopener"
+       class="btn-primary">
+
+       Follow Us On Instagram
+    </a>
+
   </div>
 </section>
 
-<!-- LIGHTBOX -->
+<!-- ================= LIGHTBOX ================= -->
 <div class="lightbox" id="lightbox">
-  <span class="close-lightbox">&times;</span>
-  <img id="lightbox-img" src="">
+
+  <button class="close-lightbox" aria-label="Close image">&times;</button>
+
+  <img id="lightbox-img" src="" alt="Expanded gallery image">
+
 </div>
 
 <div id="footer"></div>
@@ -83,6 +107,7 @@
 <script src="components/component.js"></script>
 
 <script>
+/* ================= SCROLL REVEAL ================= */
 const reveals = document.querySelectorAll(".reveal");
 
 const observer = new IntersectionObserver(entries=>{
@@ -97,7 +122,7 @@ reveals.forEach(reveal=>{
   observer.observe(reveal);
 });
 
-/* Lightbox */
+/* ================= LIGHTBOX ================= */
 const galleryImages = document.querySelectorAll(".gallery-item img");
 const lightbox = document.getElementById("lightbox");
 const lightboxImg = document.getElementById("lightbox-img");
@@ -113,7 +138,15 @@ galleryImages.forEach(img=>{
 closeLightbox.addEventListener("click",()=>{
   lightbox.style.display = "none";
 });
+
+/* Close on background click */
+lightbox.addEventListener("click", (e)=>{
+  if(e.target === lightbox){
+    lightbox.style.display = "none";
+  }
+});
 </script>
 
 </body>
 </html>
+```

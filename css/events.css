@@ -1,20 +1,19 @@
 /* =========================
-   HERO
+   EVENTS HERO
 ========================= */
 
 .events-hero{
   background:url('../assets/images/events/event1.jpg') center/cover no-repeat;
   position:relative;
   text-align:center;
-  color:#fff;
-  padding:180px 0 140px;
+  padding:160px 20px 120px;
 }
 
 .events-hero::before{
   content:"";
   position:absolute;
   inset:0;
-  background:rgba(0,0,0,0.5);
+  background:rgba(247,239,229,0.82);
 }
 
 .events-hero .container{
@@ -23,23 +22,25 @@
 }
 
 .events-hero h1{
-  font-size:56px;
-  margin-bottom:20px;
+  font-size:52px;
+  color:#3a2323;
+  margin-bottom:18px;
 }
 
 .events-hero p{
   max-width:650px;
   margin:0 auto 35px;
-  font-size:18px;
-  opacity:.9;
+  font-size:17px;
+  color:#5c3b33;
 }
+
 
 /* =========================
    EVENT TYPES
 ========================= */
 
 .event-types{
-  background:#fff;
+  background:#ffffff;
   text-align:center;
 }
 
@@ -56,18 +57,25 @@
 .event-card{
   background:#fdfaf7;
   padding:40px 30px;
-  border-radius:16px;
-  transition:.35s ease;
+  border-radius:14px;
+  box-shadow:0 15px 35px rgba(0,0,0,0.05);
+  transition:.3s ease;
 }
 
 .event-card:hover{
   transform:translateY(-6px);
-  box-shadow:0 15px 35px rgba(0,0,0,0.06);
+  box-shadow:0 25px 55px rgba(0,0,0,0.08);
 }
 
 .event-card h3{
-  margin-bottom:15px;
+  margin-bottom:12px;
+  color:#3a2323;
 }
+
+.event-card p{
+  color:#6b4a42;
+}
+
 
 /* =========================
    PACKAGES
@@ -81,32 +89,7 @@
 .section-sub{
   margin:10px auto 40px;
   max-width:500px;
-}
-
-/* Pricing Toggle */
-
-.pricing-toggle{
-  display:flex;
-  justify-content:center;
-  gap:10px;
-  margin-bottom:40px;
-}
-
-.toggle-btn{
-  padding:8px 18px;
-  border-radius:20px;
-  border:1px solid #8c4b3c;
-  background:transparent;
-  color:#8c4b3c;
-  cursor:pointer;
-  font-size:13px;
-  transition:.25s ease;
-}
-
-.toggle-btn.active,
-.toggle-btn:hover{
-  background:#8c4b3c;
-  color:#fff;
+  color:#6b4a42;
 }
 
 .packages-grid{
@@ -116,15 +99,16 @@
 }
 
 .package-card{
-  background:#fff;
+  background:#ffffff;
   padding:40px 30px;
-  border-radius:18px;
+  border-radius:16px;
+  transition:.3s ease;
+  box-shadow:0 15px 40px rgba(0,0,0,0.05);
   position:relative;
-  transition:all .35s cubic-bezier(.2,.8,.2,1);
 }
 
 .package-card:hover{
-  transform:translateY(-8px) scale(1.02);
+  transform:translateY(-6px);
   box-shadow:0 25px 55px rgba(0,0,0,0.08);
 }
 
@@ -146,14 +130,29 @@
 .package-card li{
   margin-bottom:10px;
   font-size:14px;
+  color:#6b4a42;
 }
 
-/* Featured */
+/* Featured Package */
 
 .package-card.featured{
   border:2px solid #8c4b3c;
+  box-shadow:0 20px 50px rgba(140,75,60,0.18);
+  background:#fffdfb;
   transform:scale(1.05);
-  box-shadow:0 15px 40px rgba(140,75,60,0.15);
+}
+
+.package-card.featured::after{
+  content:"Best Value";
+  position:absolute;
+  top:-14px;
+  right:-14px;
+  background:#8c4b3c;
+  color:#fff;
+  font-size:11px;
+  padding:6px 12px;
+  border-radius:20px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.15);
 }
 
 .popular-badge{
@@ -168,13 +167,14 @@
   border-radius:20px;
 }
 
+
 /* =========================
    EVENT GALLERY
 ========================= */
 
 .event-gallery{
+  background:#ffffff;
   text-align:center;
-  background:#fff;
 }
 
 .event-gallery-grid{
@@ -186,7 +186,7 @@
 
 .event-gallery-grid img{
   width:100%;
-  border-radius:14px;
+  border-radius:12px;
   object-fit:cover;
   transition:.3s ease;
 }
@@ -195,34 +195,35 @@
   transform:scale(1.03);
 }
 
+
 /* =========================
    CTA BANNER
 ========================= */
 
 .events-banner{
-  background:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),
-  url('../assets/images/events/event2.jpg') center/cover no-repeat;
-  color:#fff;
+  background:#f7efe5;
   text-align:center;
   padding:120px 0;
 }
 
 .events-banner h2{
   font-size:42px;
-  margin-bottom:20px;
+  margin-bottom:18px;
+  color:#3a2323;
 }
 
 .events-banner p{
-  margin-bottom:30px;
-  opacity:.9;
+  margin-bottom:28px;
+  color:#6b4a42;
 }
+
 
 /* =========================
    ENQUIRY FORM
 ========================= */
 
 .event-enquiry{
-  background:#f7efe5;
+  background:#ffffff;
   text-align:center;
 }
 
@@ -245,6 +246,7 @@
   padding:14px;
   border-radius:10px;
   border:1px solid rgba(0,0,0,0.1);
+  font-family:inherit;
 }
 
 .event-form input:focus,
@@ -261,35 +263,101 @@
   font-weight:500;
 }
 
+
 /* =========================
    FINAL CTA
 ========================= */
 
 .events-cta{
   text-align:center;
-  background:#fff;
+  background:#f7efe5;
 }
 
 .events-cta h2{
   margin-bottom:20px;
+  color:#3a2323;
 }
+
 
 /* =========================
    RESPONSIVE
 ========================= */
 
-@media(max-width:768px){
+/* Tablet */
+@media(max-width:900px){
 
-.events-hero h1{
-  font-size:36px;
+  .events-hero{
+    padding:120px 20px 90px;
+  }
+
+  .events-hero h1{
+    font-size:38px;
+  }
+
+  .events-hero p{
+    font-size:16px;
+  }
+
+  .packages-grid{
+    gap:25px;
+  }
+
+  .package-card.featured{
+    transform:scale(1.02);
+  }
+
+  .event-gallery-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
 }
 
-.form-row{
-  flex-direction:column;
-}
+/* Mobile */
+@media(max-width:600px){
 
-.package-card.featured{
-  transform:none;
-}
+  .events-hero{
+    padding:100px 20px 70px;
+  }
+
+  .events-hero h1{
+    font-size:30px;
+    line-height:1.2;
+  }
+
+  .events-hero p{
+    font-size:15px;
+  }
+
+  .event-card{
+    padding:30px 20px;
+  }
+
+  .packages-grid{
+    grid-template-columns:1fr;
+  }
+
+  .package-card{
+    padding:30px 20px;
+  }
+
+  .package-card.featured{
+    transform:none;
+  }
+
+  .events-banner{
+    padding:90px 20px;
+  }
+
+  .events-banner h2{
+    font-size:28px;
+  }
+
+  .form-row{
+    flex-direction:column;
+  }
+
+  .event-gallery-grid{
+    grid-template-columns:1fr;
+  }
 
 }

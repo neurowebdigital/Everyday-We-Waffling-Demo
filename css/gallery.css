@@ -1,24 +1,35 @@
 /* =========================
-   GALLERY HERO
+   GALLERY HERO (Luxury)
 ========================= */
 
 .gallery-hero{
-  background:#f7efe5;
+  background:linear-gradient(to bottom,#f7efe5,#ffffff);
   text-align:center;
-  padding:150px 0 110px;
+  padding:190px 0 140px;
+  position:relative;
+}
+
+.gallery-hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:radial-gradient(circle at top, rgba(212,175,55,0.08), transparent 70%);
+  pointer-events:none;
 }
 
 .gallery-hero h1{
-  font-size:52px;
+  font-size:58px;
   margin-bottom:20px;
   color:#3a2323;
+  letter-spacing:-1px;
 }
 
-.gallery-hero p{
+.hero-subtext{
   font-size:18px;
-  max-width:700px;
+  max-width:720px;
   margin:0 auto;
   color:#5c3b33;
+  line-height:1.7;
 }
 
 
@@ -28,22 +39,34 @@
 
 .gallery-section{
   background:#ffffff;
-  padding:130px 0;
+  padding:150px 0;
 }
 
 .gallery-grid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  gap:20px;
+  gap:30px;
 }
 
-/* Masonry variations */
+/* Luxury cards */
 
 .gallery-item{
   position:relative;
   overflow:hidden;
-  border-radius:18px;
+  border-radius:24px;
   cursor:pointer;
+  background:#fff;
+  box-shadow:
+    0 10px 25px rgba(0,0,0,0.05),
+    0 25px 60px rgba(0,0,0,0.08);
+  transition:.45s ease;
+}
+
+.gallery-item:hover{
+  transform:translateY(-10px) scale(1.01);
+  box-shadow:
+    0 15px 40px rgba(0,0,0,0.08),
+    0 40px 100px rgba(0,0,0,0.15);
 }
 
 .gallery-item img{
@@ -51,7 +74,7 @@
   height:100%;
   object-fit:cover;
   display:block;
-  transition:transform .5s ease;
+  transition:transform .7s ease;
 }
 
 /* Size variations */
@@ -64,26 +87,29 @@
   grid-column:span 2;
 }
 
-/* Hover effect */
+/* Luxury hover overlay */
 
 .gallery-item::after{
   content:"View";
   position:absolute;
   inset:0;
-  background:rgba(58,35,35,0.35);
+  background:linear-gradient(to top,
+    rgba(58,35,35,0.6),
+    rgba(212,175,55,0.15));
   color:#fff;
-  font-size:18px;
+  font-size:14px;
   font-weight:500;
+  letter-spacing:3px;
   display:flex;
   align-items:center;
   justify-content:center;
   opacity:0;
-  transition:.4s ease;
-  letter-spacing:1px;
+  backdrop-filter:blur(2px);
+  transition:.45s ease;
 }
 
 .gallery-item:hover img{
-  transform:scale(1.08);
+  transform:scale(1.12);
 }
 
 .gallery-item:hover::after{
@@ -98,7 +124,7 @@
 .lightbox{
   position:fixed;
   inset:0;
-  background:rgba(0,0,0,0.8);
+  background:rgba(0,0,0,0.9);
   display:none;
   align-items:center;
   justify-content:center;
@@ -109,50 +135,67 @@
 .lightbox img{
   max-width:90%;
   max-height:80%;
-  border-radius:18px;
-  box-shadow:0 25px 60px rgba(0,0,0,0.4);
+  border-radius:22px;
+  box-shadow:
+    0 40px 100px rgba(0,0,0,0.6),
+    0 0 40px rgba(212,175,55,0.15);
+  animation:zoomIn .4s ease;
 }
 
 .close-lightbox{
   position:absolute;
   top:40px;
   right:60px;
-  font-size:40px;
+  font-size:42px;
   color:#fff;
   cursor:pointer;
   transition:.3s ease;
 }
 
 .close-lightbox:hover{
-  transform:scale(1.1);
+  transform:scale(1.25);
 }
 
-/* Fade animation */
+/* Animations */
 
 @keyframes fadeIn{
   from{opacity:0;}
   to{opacity:1;}
 }
 
+@keyframes zoomIn{
+  from{transform:scale(.92); opacity:.5;}
+  to{transform:scale(1); opacity:1;}
+}
+
 
 /* =========================
-   INSTAGRAM CTA
+   INSTAGRAM CTA (Luxury)
 ========================= */
 
 .gallery-cta{
-  background:#3a2323;
+  background:linear-gradient(135deg,#3a2323,#5c3b33);
   color:#fff;
   text-align:center;
-  padding:140px 0;
+  padding:180px 0;
+  position:relative;
+}
+
+.gallery-cta::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:radial-gradient(circle at center, rgba(212,175,55,0.08), transparent 70%);
 }
 
 .gallery-cta h2{
-  font-size:44px;
-  margin-bottom:15px;
+  font-size:48px;
+  margin-bottom:18px;
 }
 
-.gallery-cta p{
-  margin-bottom:30px;
+.insta-handle{
+  margin-bottom:35px;
+  font-size:20px;
   opacity:.9;
 }
 
@@ -176,15 +219,15 @@
 @media(max-width:600px){
 
   .gallery-hero{
-    padding:110px 0 80px;
+    padding:140px 0 100px;
   }
 
   .gallery-hero h1{
-    font-size:38px;
+    font-size:42px;
   }
 
   .gallery-section{
-    padding:90px 0;
+    padding:110px 0;
   }
 
   .gallery-grid{
@@ -198,3 +241,4 @@
   }
 
 }
+
