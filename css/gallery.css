@@ -101,6 +101,8 @@
   justify-content:center;
   opacity:0;
   transition:.3s ease;
+
+  pointer-events:none; /* ✅ THIS FIXES IT */
 }
 
 @media(max-width:600px){
