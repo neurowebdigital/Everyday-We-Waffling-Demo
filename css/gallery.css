@@ -127,10 +127,10 @@
   border-radius:50%;
   border:none;
 
-  background:rgba(255,255,255,0.15);
+  background:none;
   backdrop-filter:blur(8px);
 
-  color:#fff;
+  color:black;
   font-size:26px;
   font-weight:300;
 
