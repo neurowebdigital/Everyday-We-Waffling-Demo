@@ -17,7 +17,7 @@ async function loadComponent(id, file) {
       element.innerHTML = data;
 
       if (id === "header") {
-        initHeader();
+        initHeader();   // 🔥 THIS runs AFTER header loads
       }
     }
 
@@ -39,49 +39,57 @@ loadComponent("footer", "components/footer.html");
 
 function initHeader() {
 
+  const hamburger = document.querySelector(".hamburger");
+  const navMenu = document.querySelector(".nav-links");
+  const menuClose = document.getElementById("menuClose");
+  const menuOverlay = document.getElementById("menuOverlay");
+
   // ---- ACTIVE PAGE HIGHLIGHT ----
   let currentPage = window.location.pathname.split("/").pop();
+  if (currentPage === "") currentPage = "index.html";
 
-  // Handle root domain (e.g. yoursite.com/)
-  if (currentPage === "") {
-    currentPage = "index.html";
-  }
-
-  const navLinks = document.querySelectorAll(".nav-links a");
-
-  navLinks.forEach(link => {
-    const linkHref = link.getAttribute("href");
-
-    if (linkHref === currentPage) {
+  document.querySelectorAll(".nav-links a").forEach(link => {
+    if (link.getAttribute("href") === currentPage) {
       link.classList.add("active");
     }
   });
 
-  // ---- MOBILE MENU TOGGLE ----
-  const hamburger = document.querySelector(".hamburger");
-  const navMenu = document.querySelector(".nav-links");
+  function closeMenu() {
+    navMenu.classList.remove("active");
+    if (menuOverlay) menuOverlay.classList.remove("active");
+  }
 
-  if (hamburger && navMenu) {
+  if (hamburger) {
     hamburger.addEventListener("click", () => {
-      navMenu.classList.toggle("active");
+      navMenu.classList.add("active");
+      if (menuOverlay) menuOverlay.classList.add("active");
     });
   }
 
-  // ---- OPTIONAL DARK MODE (SAFE) ----
-  const darkToggle = document.querySelector(".dark-toggle");
-
-  if (darkToggle) {
-    darkToggle.addEventListener("click", () => {
-      document.body.classList.toggle("dark");
-    });
+  if (menuClose) {
+    menuClose.addEventListener("click", closeMenu);
   }
+
+  if (menuOverlay) {
+    menuOverlay.addEventListener("click", closeMenu);
+  }
+
+  document.querySelectorAll(".nav-links a").forEach(link => {
+    link.addEventListener("click", closeMenu);
+  });
 }
+
+// ==========================
+// SCROLL EFFECT
+// ==========================
 
 window.addEventListener("scroll", ()=>{
   const header = document.querySelector(".site-header");
-  if(window.scrollY > 50){
-    header.classList.add("scrolled");
-  } else {
-    header.classList.remove("scrolled");
+  if(header){
+    if(window.scrollY > 50){
+      header.classList.add("scrolled");
+    } else {
+      header.classList.remove("scrolled");
+    }
   }
 });
