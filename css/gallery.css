@@ -113,32 +113,60 @@
 
 
 /* =========================
-   LIGHTBOX
+   LIGHTBOX CLOSE BUTTON
 ========================= */
-
-.lightbox{
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,0.85);
-  display:none;
-  align-items:center;
-  justify-content:center;
-  z-index:2000;
-}
-
-.lightbox img{
-  max-width:90%;
-  max-height:80%;
-  border-radius:16px;
-}
 
 .close-lightbox{
   position:absolute;
-  top:30px;
-  right:40px;
-  font-size:36px;
+  top:20px;
+  right:20px;
+
+  width:48px;
+  height:48px;
+
+  border-radius:50%;
+  border:none;
+
+  background:rgba(255,255,255,0.15);
+  backdrop-filter:blur(8px);
+
   color:#fff;
+  font-size:26px;
+  font-weight:300;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
   cursor:pointer;
+  transition:all .3s ease;
+
+  box-shadow:0 8px 20px rgba(0,0,0,0.25);
+}
+
+/* Hover */
+
+.close-lightbox:hover{
+  background:var(--accent);
+  transform:scale(1.08);
+}
+
+/* Tap feedback */
+
+.close-lightbox:active{
+  transform:scale(0.92);
+}
+
+/* Mobile sizing */
+
+@media(max-width:600px){
+  .close-lightbox{
+    width:42px;
+    height:42px;
+    font-size:22px;
+    top:15px;
+    right:15px;
+  }
 }
 
 
