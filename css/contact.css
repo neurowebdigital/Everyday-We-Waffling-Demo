@@ -88,6 +88,15 @@ a:hover{
   margin-top:20px;
 }
 
+.btn-primasry{
+  display:inline-block;
+  background:var(--accent);
+  color:#fff !important;
+  padding:14px 28px;
+  border-radius:8px;
+  font-size:15px;
+  transition:.3s ease;
+}
 
 /* =========================
    CONTACT FORM
