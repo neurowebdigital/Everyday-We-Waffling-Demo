@@ -9,6 +9,35 @@
 <link rel="stylesheet" href="css/events.css">
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+/* Lightbox */
+#lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+#lightbox img {
+  max-width: 90%;
+  max-height: 85%;
+  border-radius: 12px;
+}
+
+#lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: #fff;
+  font-size: 32px;
+  cursor: pointer;
+}
+</style>
+
 </head>
 
 <body>
@@ -68,7 +97,6 @@
 
     <div class="packages-grid">
 
-      <!-- STARTER -->
       <div class="package-card">
         <h3>Starter Package</h3>
         <div class="price">From R1,500</div>
@@ -83,7 +111,6 @@
         <a href="#enquiry" class="btn-outline">Enquire Now</a>
       </div>
 
-      <!-- PREMIUM -->
       <div class="package-card featured">
         <span class="popular-badge">Most Popular</span>
         <h3>Premium Package</h3>
@@ -100,7 +127,6 @@
         <a href="#enquiry" class="btn-primary">Enquire Now</a>
       </div>
 
-      <!-- CUSTOM -->
       <div class="package-card">
         <h3>Custom Package</h3>
         <div class="price">Tailored Pricing</div>
@@ -121,68 +147,34 @@
 </section>
 
 
-<!-- EVENT GALLERY STRIP -->
+<!-- EVENT GALLERY -->
 <section class="event-gallery reveal">
   <div class="container">
     <h2>Recent Events</h2>
 
     <div class="event-gallery-grid">
-      <img src="assets/images/concert.avif" alt="">
-      <img src="assets/images/corp.avif" alt="">
-      <img src="assets/images/birth.avif" alt="">
+
+      <a href="assets/images/concert.avif" class="gallery-item">
+        <img src="assets/images/concert.avif" alt="">
+      </a>
+
+      <a href="assets/images/corp.avif" class="gallery-item">
+        <img src="assets/images/corp.avif" alt="">
+      </a>
+
+      <a href="assets/images/birth.avif" class="gallery-item">
+        <img src="assets/images/birth.avif" alt="">
+      </a>
+
     </div>
   </div>
 </section>
 
-<section class="events-banner reveal">
-  <div class="container">
-    <h2>Turn Any Occasion Into A Sweet Experience</h2>
-    <p>Professional setup • Fresh desserts • Unforgettable moments</p>
-    <a href="#enquiry" class="btn-primary">Book Your Date</a>
-  </div>
-</section>
-
-<!-- ENQUIRY FORM -->
-<section id="enquiry" class="event-enquiry reveal">
-  <div class="container">
-
-    <h2>Enquire About Your Event</h2>
-    <p>Tell us about your event and we’ll get back to you with options.</p>
-
-    <form class="event-form">
-
-      <div class="form-row">
-        <input type="text" placeholder="Full Name" required>
-        <input type="email" placeholder="Email Address" required>
-      </div>
-
-      <div class="form-row">
-        <input type="text" placeholder="Event Date">
-        <input type="text" placeholder="Number of Guests">
-      </div>
-
-      <textarea rows="5" placeholder="Tell us about your event..." required></textarea>
-
-      <button type="submit" class="btn-primary">Submit Enquiry</button>
-
-    </form>
-
-    <a href="https://wa.me/27717946682" class="whatsapp-quick">
-      Or Message Us Directly On WhatsApp
-    </a>
-
-  </div>
-</section>
-
-
-<!-- FINAL CTA -->
-<section class="events-cta reveal">
-  <div class="container">
-    <h2>Let’s Create Something Unforgettable</h2>
-    <a href="contact.html" class="btn-primary">Contact Us</a>
-  </div>
-</section>
-
+<!-- LIGHTBOX -->
+<div id="lightbox">
+  <span id="lightbox-close">&times;</span>
+  <img id="lightbox-img" src="">
+</div>
 
 <div id="footer"></div>
 
@@ -201,6 +193,30 @@ const observer = new IntersectionObserver(entries=>{
 
 reveals.forEach(reveal=>{
   observer.observe(reveal);
+});
+
+/* LIGHTBOX SCRIPT */
+const galleryItems = document.querySelectorAll(".gallery-item");
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightbox-img");
+const closeBtn = document.getElementById("lightbox-close");
+
+galleryItems.forEach(item => {
+  item.addEventListener("click", e => {
+    e.preventDefault();
+    lightbox.style.display = "flex";
+    lightboxImg.src = item.href;
+  });
+});
+
+closeBtn.addEventListener("click", () => {
+  lightbox.style.display = "none";
+});
+
+lightbox.addEventListener("click", e => {
+  if(e.target === lightbox){
+    lightbox.style.display = "none";
+  }
 });
 </script>
 
